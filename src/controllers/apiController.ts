@@ -7,8 +7,6 @@ export const getCategories = (req: Request, res: Response) => {
 };
 
 export const getTracksByCategory = (req: Request, res: Response) => {
-  console.log(req.params);
-
   const filteredTracks = tracks.filter(
     (track) => track.categoryId === Number(req.params.categoryId)
   );
