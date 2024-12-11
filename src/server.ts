@@ -1,7 +1,11 @@
 import express, { Request, Response } from "express";
 import path from "path";
 import cors from "cors";
-import { getCategories, getTracksByCategory } from "./controllers/apiController";
+import {
+  getCategories,
+  getTracksByCategory,
+  getCategory,
+} from "./controllers/apiController";
 
 const app = express();
 app.use(
@@ -12,6 +16,7 @@ app.use(
 
 app.get("/api/categories", getCategories);
 app.get("/api/tracks/:categoryId", getTracksByCategory);
+app.get("/api/category/:categoryId", getCategory);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

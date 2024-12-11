@@ -12,3 +12,10 @@ export const getTracksByCategory = (req: Request, res: Response) => {
   );
   return res.json(filteredTracks);
 };
+
+export const getCategory = (req: Request, res: Response) => {
+  const filteredCat = categories.filter(
+    (cat) => cat.id === Number(req.params.categoryId)
+  );
+  return res.json(filteredCat[0]);
+};
